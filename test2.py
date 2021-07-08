@@ -1,8 +1,8 @@
 class erange:
     def __init__(self, *args):
-        if any([arg for arg in args if not isinstance(arg, int)]): raise TypeError("Input must be int and Alex is a weeb")
+        if any([arg for arg in args if not isinstance(arg, int)]): raise TypeError("Input must be int")
         if len(args) == 0:
-            raise Exception("you gave no arguments and Alex killed my one liner streak")
+            raise Exception("you gave no arguments")
         elif len(args) == 1:
             self.start, self.stop, self.step = 0, args[0], 1
         elif len(args) == 2:
@@ -10,9 +10,9 @@ class erange:
         elif len(args) == 3:
             self.start, self.stop, self.step = args[0], args[1], args[2]
         else:
-            raise Exception("Too many arguments given and Alex is a weeb")
+            raise Exception("Too many arguments given")
         self._start = self.start
-        if self.step == 0: raise ValueError("step of 0 given and Alex ruined my lambdas")
+        if self.step == 0: raise ValueError("step of 0 given")
     def __iter__(self):
         return self
     def __next__(self):
@@ -36,7 +36,7 @@ class erange:
         if condition:
             return result
         else:
-            raise IndexError("Invalid index given and Alex is weeb who killed my one liners")
+            raise IndexError("Invalid index given")
     def __len__(self):
         # if it is evenly divisible, return value, else return value + 1
         if ((self.stop - self.start) // self.step) == ((self.stop - self.start) / self.step):
