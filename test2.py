@@ -1,6 +1,7 @@
 class erange:
     def __init__(self, *args):
-        if any([arg for arg in args if not isinstance(arg, int)]): raise TypeError("Input must be int")
+        if any([arg for arg in args if not isinstance(arg, int)]):
+            raise TypeError("Input must be int")
         if len(args) == 0:
             raise Exception("you gave no arguments")
         elif len(args) == 1:
@@ -12,7 +13,8 @@ class erange:
         else:
             raise Exception("Too many arguments given")
         self._start = self.start
-        if self.step == 0: raise ValueError("step of 0 given")
+        if self.step == 0:
+            raise ValueError("step of 0 given")
     def __iter__(self):
         return self
     def __next__(self):
